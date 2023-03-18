@@ -1,5 +1,5 @@
 {
-  "name": "wp-theme-webpack5-sass",
+  "name": "wp-barebone-theme-webpack5-sass",
   "version": "1.0.0",
   "description": "Barebones WordPress theme with CSS/SASS and JavaScript compiled using webpack 5.",
   "main": "js/build/main.js",
@@ -8,7 +8,6 @@
     "dist": "webpack --mode production",
     "watch": "webpack --watch --mode development"
   },
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.18.6",
     "@babel/preset-env": "^7.18.6",

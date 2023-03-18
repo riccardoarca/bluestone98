@@ -6,6 +6,15 @@
 
       <nav class="main-header__nav">
 
+      <?php 
+
+        wp_nav_menu( array(
+
+            'menu'   => 'Main Menu',
+            'walker' => new WPDocs_Walker_Nav_Menu()
+          ) );
+      ?>
+
       </nav>
 
     </div>

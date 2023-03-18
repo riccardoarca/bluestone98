@@ -15,8 +15,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link rel="stylesheet" href="https://use.typekit.net/djw5rvb.css">
-
+   <link rel="stylesheet" href="https://use.typekit.net/mum3xkt.css">
+ 
   <!-- open graph header includes -->
   <meta property="og:title" content="<?=get_the_title()?>" />
   <meta property="og:url" content="<?=wp_get_canonical_url()?>" />
@@ -27,7 +27,7 @@
 
 </head>
 
-<body>
+<body class="<?php body_class(); ?>">
 
 <?php do_action( 'wp_body_open' ); ?>
 

@@ -1,25 +1,166 @@
 html {
-  
+  scroll-behavior: smooth;
+  position: relative;
+  @media only screen and (#{$bp-smaller-than-tablet}) {
+    overflow-x: hidden;
+  }
 }
+
 
 body {
-  text-align: center;
+  font-family: $poppins;
+  font-size: size(16);
+  line-height: size(21);
+  font-weight: $fwr;
+  background-color: $white;
+}
+
+.container-fluid, .container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: size(1920);
+  margin: 0 auto;
   padding: 0;
-  margin: 0;
+  box-sizing: border-box;
 }
 
-.wrapper-navbar {
-   position:relative;
-   z-index:100;
-   position:-webkit-sticky;
-   position:sticky;
-   -webkit-box-align:self-start;
-   -webkit-align-items:self-start;
-   -ms-flex-align:self-start;
-   align-items:self-start;
-   top:0
+.containerfull {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-footer {
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: 0;
+  margin-left: 0;
+}
+.fa-sr-only-focusable:not(:focus), .sr-only-focusable:not(:focus) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
 
+.h-100{
+  height: 100%;
+}
+.w-100{
+  width: 100%;
+}
+.text-center{
+  text-align: center;
+}
+.text-black{
+  color: $black;
+}
+.text-white{
+  color:$white;
+}
+.lg-container{
+  max-width: size(1920);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: size(15);
+    padding-right: size(15);
+}
+.d-block{
+  display: block;
+}
+.pt-200{
+   @include vw(padding-top , 200, 70);
+}
+
+.pt-100{
+   @include vw(padding-top , 100, 70);
+}
+.mt30{
+  margin-top: size(30);
+}
+
+@media only screen and (#{$bp-smaller-than-tablet}) {
+  .mtm30{
+    margin-top: size(30);
+  }
+  .mtm0{
+    margin-top: 0;
+  }
+}
+
+.relative{
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+button:focus {
+  outline: none;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.up {
+  text-transform: uppercase;
+}
+
+.no_wrap {
+ @media only screen and (#{$bp-larger-than-tablet}) {
+    white-space: nowrap;
+  }
+}
+
+.z_1 {
+  z-index: -1;
+}
+
+.z-0 {
+  z-index: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.z-2 {
+  z-index: 2;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+.z-4 {
+  z-index: 4;
+}
+
+.z-5 {
+  z-index: 5;
+}
+
+.z-6 {
+  z-index: 6;
+}
+
+.obj_fit {
+  object-fit: cover;
 }

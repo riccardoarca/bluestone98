@@ -1,10 +1,31 @@
-//Fonts
-$verdana: "verdana-pro", sans-serif;
-$astoria: "astoria-sans", sans-serif;
+// Breakpoints
+$bp-larger-than-mobile: "min-width: 441px" !default;
+$bp-larger-than-phablet: "min-width: 551px" !default;
+$bp-larger-than-tablet: "min-width: 992px" !default;
+$bp-larger-than-desktop: "min-width: 1041px" !default;
+$bp-larger-than-desktophd: "min-width: 1381px" !default;
+$bp-smaller-than-mobile: "max-width: 440px" !default;
+$bp-smaller-than-phablet: "max-width: 550px" !default;
+$bp-smaller-than-tablet: "max-width: 991px" !default;
+$bp-smaller-than-desktop: "max-width: 1040px" !default;
+$bp-smaller-than-desktophd: "max-width: 1380px" !default;
 
+$container-width: 1380px !default;
+$containerfull-width: 100%;
+$containergutter:0px;
+
+//Fonts
+$poppins: "poppins", sans-serif;
+$rift: "rift", sans-serif;
+//Font Weight
 $fwl: 300;
 $fwr: 400;
 $fwb: 700;
+
+//Colours
+$white: #ffffff;
+$black: #141414;
+$green: #32cd32;
 
 // mimick Photoshop letterspacing/tracking
 @function tracking( $target ){

@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 // clean out build dir in-between builds
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = [
   {
@@ -30,7 +31,7 @@ module.exports = [
         // sass compilation
         {
           test: /\.(sass|scss)$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+          use: [MiniCssExtractPlugin.loader, 'postcss-loader', 'sass-loader']
         },
         // loader for webfonts (only required if loading custom fonts)
         {

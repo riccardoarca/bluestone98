@@ -3,9 +3,7 @@
 export class DisplayLabel {
   async init() {
     setTimeout(()=> {
-      const displayLabelElem = document.createElement('p');
-      displayLabelElem.innerHTML = 'Babel transpiled JavaScript successfully loaded.';   
-      document.getElementsByTagName('main')[0].appendChild(displayLabelElem);
+      const displayLabelElem = document.createElement('p');   
     }, 500);
   }
 }
