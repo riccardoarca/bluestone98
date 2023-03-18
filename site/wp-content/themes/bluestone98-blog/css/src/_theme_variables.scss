@@ -1,0 +1,41 @@
+//Fonts
+$verdana: "verdana-pro", sans-serif;
+$astoria: "astoria-sans", sans-serif;
+
+$fwl: 300;
+$fwr: 400;
+$fwb: 700;
+
+// mimick Photoshop letterspacing/tracking
+@function tracking( $target ){
+  	@return ($target / 1000) * 1em;
+}
+
+@mixin tracking( $target ){
+  	letter-spacing: tracking( $target );
+}
+
+// to be used with centred text when using the above tracking to make text truly centred.
+@function indent( $target ){
+	@return ($target / 1000) * 1em;
+}
+
+@mixin indent( $target ){
+	text-indent: indent( $target );
+}
+
+// The default font size for html is 16px
+$base-size: 16;
+//Function to convert px value into rem
+//You can replace rem with any other value you want (rem is most preferred value for web)
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+//vw
+ @mixin vw($property, $desktop: 0, $mobile: 0) {
+  #{$property}: ($desktop / 1920 * 100) * 1vw;
+  @media (max-width: 993px) { 
+    #{$property}: ($mobile / 375 * 100) * 1vw;
+  }
+}

@@ -1,0 +1,25 @@
+html {
+  
+}
+
+body {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper-navbar {
+   position:relative;
+   z-index:100;
+   position:-webkit-sticky;
+   position:sticky;
+   -webkit-box-align:self-start;
+   -webkit-align-items:self-start;
+   -ms-flex-align:self-start;
+   align-items:self-start;
+   top:0
+}
+
+footer {
+
+}
