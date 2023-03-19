@@ -1,3 +1,18 @@
+<?php
+/**
+ * The header for our theme
+ *
+ *
+ * @package Understrap
+ */
+
+// Exit if accessed directly.
+defined( 'ABSPATH' ) || exit;
+
+?>
+
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
 
   <title><?=get_the_title()?></title>
@@ -15,7 +30,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-   <link rel="stylesheet" href="https://use.typekit.net/mum3xkt.css">
+  <link rel="stylesheet" href="https://use.typekit.net/mum3xkt.css">
  
   <!-- open graph header includes -->
   <meta property="og:title" content="<?=get_the_title()?>" />
