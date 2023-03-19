@@ -1,5 +1,3 @@
-
-
 //Fonts
 h1 {
   font-family: $rift;
@@ -19,7 +17,7 @@ h2 {
   text-transform: uppercase;
 }
 
-p{
+p {
   font-family: $poppins;
   @include vw(font-size, 18, 16);
   @include vw(line-height, 22, 18);
@@ -27,7 +25,7 @@ p{
   font-weight: $fwl;
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -43,7 +41,7 @@ a{
     padding: 0 size(15);
     img {
       object-fit: cover;
-       @include vw(height, 600, 480);
+      @include vw(height, 600, 480);
     }
     @media only screen and (#{$bp-smaller-than-tablet}) {
       flex-basis: 100%;
@@ -62,7 +60,6 @@ a{
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#fcfcff', GradientType=0);
       /* IE6-9 */
       transition: all 0.6s ease-in;
-      
     }
     &.post-odd {
       margin-left: 16.66666667%;
@@ -75,7 +72,7 @@ a{
         background: transparent;
       }
     }
-    &__container{
+    &__container {
       box-sizing: border-box;
       display: flex;
       flex-direction: row;
@@ -84,59 +81,59 @@ a{
       margin-left: 0;
       padding: size(30);
       align-items: flex-end;
-      a{
+      a {
         color: $white;
       }
     }
   }
 }
 
-.pagination{
+.pagination {
   justify-content: center;
   align-content: center;
   margin-top: size(40);
-  &__wrapper{
-    h2{
+  &__wrapper {
+    h2 {
       display: none;
     }
-    .nav-links{
-      .page-numbers{
+    .nav-links {
+      .page-numbers {
         font-family: $poppins;
         @include vw(font-size, 28, 22);
         @include vw(line-height, 22, 18);
         font-style: normal;
         font-weight: $fwr;
-         margin-left: size(15);
-          margin-right: size(15);
-          @media only screen and (#{$bp-smaller-than-tablet}) {
-            margin-left: size(10);
-            margin-right: size(10);
-          }
+        margin-left: size(15);
+        margin-right: size(15);
+        @media only screen and (#{$bp-smaller-than-tablet}) {
+          margin-left: size(10);
+          margin-right: size(10);
+        }
       }
-      a{
+      a {
         color: $black;
         transition: color .3s ease;
-        &:hover{
+        &:hover {
           opacity: .6;
         }
       }
     }
   }
 }
-.sidebar{
-   @media only screen and (#{$bp-larger-than-tablet}) {
+
+.sidebar {
+  @media only screen and (#{$bp-larger-than-tablet}) {
     display: flex;
     align-items: center;
     justify-content: space-around;
   }
   @media only screen and (#{$bp-smaller-than-tablet}) {
     display: block;
-    margin:auto;
+    margin: auto;
     text-align: center;
   }
-  label.screen-reader-text{
+  label.screen-reader-text {
     opacity: 0;
     display: none;
   }
 }
-
