@@ -140,8 +140,3 @@ a{
   }
 }
 
-#wrapper-footer {
-  background-color: $black;
-  @include vw(height, 600, 680);
-  @include vw(margin-top, 100, 40);
-}

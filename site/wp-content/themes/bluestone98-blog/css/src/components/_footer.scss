@@ -1,0 +1,11 @@
+#wrapper-footer {
+  background-color: $black;
+  @include vw(height, 400, 680);
+  @include vw(margin-top, 100, 40);
+  .lg-container{
+     padding: size(20);
+    @media only screen and (#{$bp-smaller-than-tablet}) {
+      padding: size(30);
+    }
+  }
+}
