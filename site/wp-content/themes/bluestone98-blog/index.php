@@ -20,9 +20,9 @@ get_header();
 
 <div class="wrapper" id="index-wrapper">
 
-  <div id="#content" class="main"></div>
+  <div id="#content" class="main anitrigger">
 
-     <section id="blog-header" class="main-header">
+    <section id="blog-header" class="main-header">
         
           <div class="hero lg-container">
             
@@ -32,66 +32,59 @@ get_header();
 
       </section>
 
-      <section id="post-container" class="container pt-100">
+ 
+       <section id="sidebar_area">
+ 
+           <div class="row">
+ 
+             <div class="lg-container">
+
+                 <?php get_sidebar(); ?>
+
+             </div>
+ 
+         </div>
+ 
+       </section>
+
+      <section id="post-container" class="container fade_in_up simplefade pt-100">
 
          <?php if ( have_posts() ) { ?>
 
-          <?php $post_counter = 1 ?>
 
-           <div class="row posts-loop w-100">
+           <div  class="row posts-loop w-100">
 
-             <?php while ( have_posts() ) : the_post(); ?>
-
-              <?php  $categories = get_the_category($post->ID); ?>
-                 
-               <div id="post-<?php echo $post_counter; ?>" class="post-card <?php if( $post_counter == 4 ){ echo 'post-odd'; } ?> mtm30">
-
-                 <a class="relative d-block" href="<?php the_permalink(); ?>">
-
-                   <?php echo get_the_post_thumbnail( $post->ID, 'blog_thumb', array('class'=>'img-fluid w-100') ); ?>
-
-                   <div class="overlay abs w-100 h-100">
-
-                     <p class="fs16 up text-white">
-
-                        <?php foreach ($categories as  $category) {
-                          
-                            echo  $category->name;
-                          
-                          } ?>
-                        
-                        </p>
-                      
-                         <h3 class="fs30_v up text-green content-fit"><?php the_title(); ?></h3>
-            
-                   </div>
-
-                 </a>
-
-               </div>
-
-               <?php  if( $post_counter %3 == 0 ){ ?>
-
-               </div><div class="row posts-loop w-100 mt30 mtm0">
-              <?php  } ?>
-
-             <?php $post_counter++; endwhile; ?>
+             <?php  get_template_part( 'loop-templates/content'); ?>
              
            </div>
 
-           <?php } else { ?>
+         <?php }else {
 
-           <div class="no-content">
+            get_template_part( 'loop-templates/content');
+          }
 
-             <h2 class="h2text-center">Sorry, there are no posts to read.</h2>
+          ?>
 
-           </div> 
+       <div class="row pagination">
 
-       <?php } ?>
+          <div class="pagination__wrapper">
+            
+               <?php
+
+                  the_posts_pagination( array(
+                    'mid_size' => 2,
+                    'prev_text' => __( '<', 'bluestone98' ),
+                    'next_text' => __( '>', 'bluestone98' ),
+                    ) );
+                ?>
+
+          </div>
+
+       </div>
                 
       </section>
-
-    </div>
+    
+  </div>
 
 </div><!-- #index-wrapper -->
 
