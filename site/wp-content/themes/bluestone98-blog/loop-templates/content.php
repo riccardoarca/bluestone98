@@ -13,49 +13,49 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-              <?php  $categories = get_the_category($post->ID); ?>
+    <?php  $categories = get_the_category($post->ID); ?>
+          
+        <div id="post-<?php echo $post_counter; ?>" class="post-card <?php if( $post_counter == 4 ){ echo 'post-odd'; } ?> mtm30">
+
+          <a class="relative d-block" href="<?php the_permalink(); ?>" title="<?php echo the_title(); ?>">
+
+            <?php echo get_the_post_thumbnail( $post->ID, 'blog-medium', array('class'=>'img-fluid w-100') ); ?>
+
+            <div class="overlay abs w-100 h-100">
+
+               <div class="post-card__container h-100">
+
+                 <div class="d-block">
+                   
+                    <p class="fs16 up text-white">
+
+                     <?php foreach ($categories as  $category) {
+                       
+                         echo  $category->name;
+                       
+                       } ?>
                  
-               <div id="post-<?php echo $post_counter; ?>" class="post-card <?php if( $post_counter == 4 ){ echo 'post-odd'; } ?> mtm30">
+                   </p>
+               
+                  <h2 class="up text-white"><?php the_title(); ?></h2>
 
-                 <a class="relative d-block" href="<?php the_permalink(); ?>" title="<?php echo the_title(); ?>">
-
-                   <?php echo get_the_post_thumbnail( $post->ID, 'blog-medium', array('class'=>'img-fluid w-100') ); ?>
-
-                   <div class="overlay abs w-100 h-100">
-
-                      <div class="post-card__container h-100">
-
-                        <div class="d-block">
-                          
-                           <p class="fs16 up text-white">
-
-                            <?php foreach ($categories as  $category) {
-                              
-                                echo  $category->name;
-                              
-                              } ?>
-                        
-                          </p>
-                      
-                         <h2 class="up text-white"><?php the_title(); ?></h2>
-
-                        </div>
-
-                      </div>
-              
-                   </div>
-
-                 </a>
+                 </div>
 
                </div>
+       
+            </div>
 
-               <?php  if( $post_counter %3 == 0 ){ ?>
+          </a>
 
-                </div><div class="row posts-loop w-100 mt30 mtm0">
+        </div>
 
-              <?php  } ?>
+        <?php  if( $post_counter %3 == 0 ){ ?>
 
-             <?php $post_counter++; endwhile; ?>
+         </div><div class="row posts-loop w-100 mt30 mtm0">
+
+       <?php  } ?>
+
+ <?php $post_counter++; endwhile; ?>
 
 
 

@@ -2,7 +2,6 @@
 /**
  * The template for displaying all single posts.
  *
- * @package understrap
  */
 
 // Exit if accessed directly.
@@ -44,7 +43,7 @@ get_header();
 				    // Loop through rows.
 				    while ( have_rows('flexible_content') ) : the_row();
 
-				        // Case: Paragraph layout.
+				        // Case: Subheading layout.
 				        if( get_row_layout() == 'sub_headeing' ):
 				            $title = get_sub_field('subtitle');
 				            $content = get_sub_field('content'); ?>
@@ -61,8 +60,9 @@ get_header();
 
 						       </div>
 
-
-				        <?php elseif( get_row_layout() == 'full_width_image' ): 
+				        <?php 
+				        	// Case: Fullwidth image layout.
+				    		elseif( get_row_layout() == 'full_width_image' ): 
 				            $full_image = get_sub_field('image'); 
 				            $caption = get_sub_field('caption'); 
 
@@ -80,7 +80,9 @@ get_header();
 
 						  </div>
 
-						 <?php elseif( get_row_layout() == 'video' ): 
+						 <?php 
+						 	// Case: Video layout.
+							elseif( get_row_layout() == 'video' ): 
 				            $video_url = get_sub_field('video_url'); 
 				            $video_caption = get_sub_field('video_caption'); 
 
@@ -148,7 +150,9 @@ get_header();
 						  </div>
 
 
-						 <?php elseif( get_row_layout() == 'full_width_content' ): 
+						 <?php 
+						 	// Case: Full Width Content layout.
+							elseif( get_row_layout() == 'full_width_content' ): 
 				            $full_content = get_sub_field('content'); 
 				            $video_caption = get_sub_field('video_caption'); 
 
