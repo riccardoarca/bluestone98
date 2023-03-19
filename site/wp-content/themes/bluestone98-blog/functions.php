@@ -85,11 +85,11 @@ class WPDocs_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 
 /**
- * Set up theme defaults and registers support for various WordPress feaures.
+ * Set up theme defaults and registers support for various WordPress features.
  */
 add_action( 'after_setup_theme', function() {
 
-  load_theme_textdomain( 'my-theme', get_theme_file_uri( 'languages' ) );
+  load_theme_textdomain( 'bluestone98', get_theme_file_uri( 'languages' ) );
 
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'title-tag' );
