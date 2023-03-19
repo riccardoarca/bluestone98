@@ -94,6 +94,9 @@ add_action( 'after_setup_theme', function() {
   add_theme_support( 'automatic-feed-links' );
   add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
+  add_image_size( 'blog-hero', 1280, 723, true );
+  add_image_size( 'blog-medium', 500, 600, true );
+  add_image_size( 'blog-small', 446, 446, true );
   add_theme_support( 'html5', array(
     'search-form',
     'comment-form',
@@ -153,7 +156,7 @@ add_action( 'wp_enqueue_scripts', 'deregister_polyfill');
  */
 add_action( 'widgets_init', function() {
   register_sidebar( array(
-    'name'          => __( 'Sidebar', 'my-theme' ),
+    'name'          => __( 'Sidebar', 'bluestone98' ),
     'id'            => 'sidebar-1',
     'description'   => '',
     'before_widget' => '<section id="%1$s" class="widget %2$s">',
