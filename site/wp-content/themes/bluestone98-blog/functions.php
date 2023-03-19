@@ -208,5 +208,8 @@ function remove_block_css(){
 }
 add_action( 'wp_enqueue_scripts', 'remove_block_css', 100 );
 
+/* Hide admin bar*/
+function hide_admin_bar(){ return false; }
+add_filter( 'show_admin_bar', 'hide_admin_bar' );
 
 ?>
