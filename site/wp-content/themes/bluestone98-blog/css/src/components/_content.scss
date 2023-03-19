@@ -1,61 +1,34 @@
 
-#wrapper-navbar {
-  position: relative;
-  z-index: 100;
-  position: sticky;
-  align-items: self-start;
-  display: flex;
-  flex-direction: row;
-  top: 0;
-  .main-header {
-    &__inner {
-      display: flex;
-      justify-content: space-between;
-      align-self: center;
-      width: 100%;
-      margin-right: auto;
-      margin-left: auto;
-      max-width: size(1980);
-      padding: 46px 30px;
-      padding: size(45) size(30);
-    }
-    &__nav {
-      display: flex;
-      -webkit-box-pack: justify;
-      justify-content: space-between;
-      align-items: center;
-      #menu-main-menu {
-        display: flex;
-        -webkit-box-pack: justify;
-        justify-content: space-between;
-        align-items: center;
-        .main-menu-item {
-          gap: 4.5rem;
-          margin-right: 6rem;
-          list-style: none;
-          a {
-            text-decoration: none;
-            display: inline-block;
-            font-family: $poppins;
-            font-weight: $fwr;
-            font-style: normal;
-            font-size: size(22);
-            color: $black;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-}
 
+//Fonts
 h1 {
   font-family: $rift;
-  @include vw(font-size, 200, 70);
-  @include vw(line-height, 120, 65);
+  @include vw(font-size, 200, 60);
+  @include vw(line-height, 180, 65);
   font-style: normal;
   font-weight: $fwb;
   text-transform: uppercase;
+}
+
+h2 {
+  font-family: $rift;
+  @include vw(font-size, 48, 28);
+  @include vw(line-height, 53, 22);
+  font-style: normal;
+  font-weight: $fwr;
+  text-transform: uppercase;
+}
+
+p{
+  font-family: $poppins;
+  @include vw(font-size, 18, 16);
+  @include vw(line-height, 22, 18);
+  font-style: normal;
+  font-weight: $fwl;
+}
+
+a{
+  text-decoration: none;
 }
 
 .posts-loop {
@@ -68,9 +41,9 @@ h1 {
     flex-basis: 33.33333333%;
     max-width: 33.33333333%;
     padding: 0 size(15);
-       transition: all .8s ease;  
     img {
       object-fit: cover;
+       @include vw(height, 600, 480);
     }
     @media only screen and (#{$bp-smaller-than-tablet}) {
       flex-basis: 100%;
@@ -79,7 +52,6 @@ h1 {
     .overlay {
       left: 0;
       top: 0;
-  
       /* Old browsers */
       background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 1) 0%, rgba(252, 252, 255, .2) 100%);
       /* FF3.6-15 */
@@ -103,9 +75,73 @@ h1 {
         background: transparent;
       }
     }
+    &__container{
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-right: 0;
+      margin-left: 0;
+      padding: size(30);
+      align-items: flex-end;
+      a{
+        color: $white;
+      }
+    }
   }
 }
 
-footer {
+.pagination{
+  justify-content: center;
+  align-content: center;
+  margin-top: size(40);
+  &__wrapper{
+    h2{
+      display: none;
+    }
+    .nav-links{
+      .page-numbers{
+        font-family: $poppins;
+        @include vw(font-size, 28, 22);
+        @include vw(line-height, 22, 18);
+        font-style: normal;
+        font-weight: $fwr;
+         margin-left: size(15);
+          margin-right: size(15);
+          @media only screen and (#{$bp-smaller-than-tablet}) {
+            margin-left: size(10);
+            margin-right: size(10);
+          }
+      }
+      a{
+        color: $black;
+        transition: color .3s ease;
+        &:hover{
+          opacity: .6;
+        }
+      }
+    }
+  }
+}
+.sidebar{
+   @media only screen and (#{$bp-larger-than-tablet}) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @media only screen and (#{$bp-smaller-than-tablet}) {
+    display: block;
+    margin:auto;
+    text-align: center;
+  }
+  label.screen-reader-text{
+    opacity: 0;
+    display: none;
+  }
+}
 
+#wrapper-footer {
+  background-color: $black;
+  @include vw(height, 600, 680);
+  @include vw(margin-top, 100, 40);
 }

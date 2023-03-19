@@ -8,29 +8,54 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
-	<header class="entry-header">
+	<?php $post_counter = 1 ?>
 
-		<section id="post-container" class="pt-200">
+	<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="lg-container">
-				
-				<div class="posts-loop">
-						
-					<div class="post-card">
+              <?php  $categories = get_the_category($post->ID); ?>
+                 
+               <div id="post-<?php echo $post_counter; ?>" class="post-card <?php if( $post_counter == 4 ){ echo 'post-odd'; } ?> mtm30">
 
-						<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+                 <a class="relative d-block" href="<?php the_permalink(); ?>" title="<?php echo the_title(); ?>">
 
-					</div>
-					
-				</div>
+                   <?php echo get_the_post_thumbnail( $post->ID, 'blog-medium', array('class'=>'img-fluid w-100') ); ?>
 
-			</div>
-                
-                
-        </section>
+                   <div class="overlay abs w-100 h-100">
 
-	</header><!-- .entry-header -->
+                      <div class="post-card__container h-100">
 
-</article><!-- #post-## -->
+                        <div class="d-block">
+                          
+                           <p class="fs16 up text-white">
+
+                            <?php foreach ($categories as  $category) {
+                              
+                                echo  $category->name;
+                              
+                              } ?>
+                        
+                          </p>
+                      
+                         <h2 class="up text-white"><?php the_title(); ?></h2>
+
+                        </div>
+
+                      </div>
+              
+                   </div>
+
+                 </a>
+
+               </div>
+
+               <?php  if( $post_counter %3 == 0 ){ ?>
+
+                </div><div class="row posts-loop w-100 mt30 mtm0">
+
+              <?php  } ?>
+
+             <?php $post_counter++; endwhile; ?>
+
+
+

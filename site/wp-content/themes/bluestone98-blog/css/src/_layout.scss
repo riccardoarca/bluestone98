@@ -1,9 +1,7 @@
 html {
   scroll-behavior: smooth;
   position: relative;
-  @media only screen and (#{$bp-smaller-than-tablet}) {
-    overflow-x: hidden;
-  }
+  overflow-x: hidden;
 }
 
 
@@ -13,6 +11,9 @@ body {
   line-height: size(21);
   font-weight: $fwr;
   background-color: $white;
+  margin-left: 0;
+  margin-right: 0;
+  overflow-x: hidden;
 }
 
 .container-fluid, .container {
@@ -44,6 +45,9 @@ body {
   flex-wrap: wrap;
   margin-right: 0;
   margin-left: 0;
+  &.justify-content-center{
+    justify-content: center;
+  }
 }
 .fa-sr-only-focusable:not(:focus), .sr-only-focusable:not(:focus) {
     position: absolute;
@@ -77,8 +81,13 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: size(15);
-    padding-right: size(15);
+    
+}
+.md-container{
+  max-width: size(1380);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .d-block{
   display: block;
@@ -93,13 +102,26 @@ body {
 .mt30{
   margin-top: size(30);
 }
+.mt60{
+  margin-top: size(60);
+}
+.mt90{
+  margin-top: size(90);
+}
 
 @media only screen and (#{$bp-smaller-than-tablet}) {
   .mtm30{
     margin-top: size(30);
   }
+  .mtm60{
+    margin-top: size(30);
+  }
   .mtm0{
     margin-top: 0;
+  }
+  .pd_mob{
+    padding-left: size(15);
+    padding-right: size(15);
   }
 }
 
