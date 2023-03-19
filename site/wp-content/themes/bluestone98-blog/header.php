@@ -2,9 +2,7 @@
 /**
  * The header for our theme
  *
- *
- * @package Understrap
- */
+ * */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
