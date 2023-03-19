@@ -11,7 +11,9 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php $post_counter = 1 ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+    //Set up to show 5 posts on Reading Settings
+     while ( have_posts() ) : the_post(); ?>
 
     <?php  $categories = get_the_category($post->ID); ?>
           
