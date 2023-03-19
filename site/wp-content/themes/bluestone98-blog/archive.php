@@ -20,7 +20,7 @@ get_header();
 
 <div class="wrapper" id="archive-wrapper">
 
-  <div id="#content" class="main">
+  <div id="content" class="main">
       
       <section id="archive-header" class="main-header">
         

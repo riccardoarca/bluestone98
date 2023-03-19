@@ -20,7 +20,7 @@ get_header();
 
 <div class="wrapper" id="index-wrapper">
 
-  <div id="#content" class="main anitrigger">
+  <div id="content" class="main anitrigger">
 
     <section id="blog-header" class="main-header">
         

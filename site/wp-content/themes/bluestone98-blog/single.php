@@ -13,7 +13,7 @@ get_header();
 
 <div class="wrapper pt-0" id="single-wrapper">
 
-	<div id="#content" class="main pd_mob">
+	<div id="content" class="main pd_mob">
 		
 		<?php while ( have_posts() ) : the_post(); ?>
 
