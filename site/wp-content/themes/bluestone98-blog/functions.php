@@ -212,5 +212,19 @@ add_action( 'wp_enqueue_scripts', 'remove_block_css', 100 );
 function hide_admin_bar(){ return false; }
 add_filter( 'show_admin_bar', 'hide_admin_bar' );
 
+function hide_from_loop($query) 
+{
+   if (is_admin() || !$query->is_main_query()) // If is admin area or is not the main query being run...
+      return; // ...stop function from running
+
+   if (is_archive() || is_search() || is_home()) // If is archive, search, or home pages
+   {
+      $query->set( 'posts_per_page', 5 ); // Setting how many posts to show
+      $query->set('meta_key', 'featured'); // Look for our hide_from_loop custom field
+      $query->set('meta_value', '0'); // Only show posts that are unchecked
+   }
+}
+add_action( 'pre_get_posts', 'hide_from_loop', 1 ); // Hook into pre_get_posts
+
 
 ?>

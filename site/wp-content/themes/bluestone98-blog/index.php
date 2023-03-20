@@ -120,20 +120,6 @@ get_header();
 
          <?php if ( have_posts() ) { ?>
 
-          <?php
-              global $wp_query;
-              query_posts(
-                  array_merge(
-                      array(
-                      'post_type' => 'post',
-                      'posts_per_page' => 5,
-                      'orderby' => 'date',
-                      'post_status'  => 'publish',
-                       ),
-                      $wp_query->query
-                  )
-              ); ?>
-
            <div  class="row posts-loop w-100">
 
              <?php  get_template_part( 'loop-templates/content'); ?>
