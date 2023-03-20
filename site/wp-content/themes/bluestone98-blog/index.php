@@ -121,7 +121,6 @@ get_header();
          <?php if ( have_posts() ) { ?>
 
           <?php
-              //Becasue we're displaying the first post as featured post
               global $wp_query;
               query_posts(
                   array_merge(
@@ -130,7 +129,6 @@ get_header();
                       'posts_per_page' => 5,
                       'orderby' => 'date',
                       'post_status'  => 'publish',
-                      'offset'     => 1 //this shouldn break the pagination, but on functions.php line 215 there is a quick fix..
                        ),
                       $wp_query->query
                   )
