@@ -49,6 +49,16 @@ body {
   }
 }
 
+.half-lg{
+  width: 100%;
+   @media only screen and (#{$bp-larger-than-tablet}) {
+      width: 47.5%;
+    }
+    &__offset-lg{
+        margin-left: 8.33333333%;
+      }
+  }
+
 .fa-sr-only-focusable:not(:focus), .sr-only-focusable:not(:focus) {
   position: absolute;
   width: 1px;

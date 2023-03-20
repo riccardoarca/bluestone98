@@ -13,7 +13,7 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php
     //Set up to show 5 posts on Reading Settings
-     while ( have_posts() ) : the_post(); ?>
+     while ( have_posts() ) : the_post();  ?>
 
     <?php  $categories = get_the_category($post->ID); ?>
           
@@ -58,6 +58,8 @@ defined( 'ABSPATH' ) || exit;
        <?php  } ?>
 
  <?php $post_counter++; endwhile; ?>
+
+ <?php wp_reset_query();  ?>
 
 
 

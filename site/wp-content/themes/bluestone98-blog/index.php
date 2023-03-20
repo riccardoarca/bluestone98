@@ -25,8 +25,77 @@ get_header();
     <section id="blog-header" class="main-header">
         
           <div class="hero lg-container">
-            
-            <h1 class="text-center text-black">News</h1>
+
+            <div class="row">
+              
+               <div class="main-header__title half-lg">
+                  
+                  <h1 class="text-center text-black">News</h1>
+
+              </div> 
+
+                <div class="main-header__featured half-lg">
+                
+                <?php 
+
+                  $args = array( 
+                      'post_type'      => 'post', 
+                      'posts_per_page' => 1, 
+                      'orderby'        => 'date',
+                      'post_status'  => 'publish',
+                  );
+                      $articles = new WP_Query( $args );
+                        if( $articles->have_posts() ) :
+                          setup_postdata( $articles );
+                          $categories = get_the_category($post->ID);
+                          $excerpt = get_field('excerpt'); 
+                        ?>
+                        
+                      <?php
+                        while( $articles->have_posts() ) :
+                          $articles->the_post();
+                                  
+                   ?> 
+
+                       <a class="relative d-block " href="<?php the_permalink(); ?>" title="<?php echo the_title(); ?>">
+
+                        <?php echo get_the_post_thumbnail( $post->ID, 'blog-medium', array('class'=>'img-fluid w-100') ); ?>
+
+                        <div class="overlay abs w-100 h-100">
+
+                           <div class="post-card__container h-100">
+
+                             <div class="d-block">
+                               
+                                <p class="fs16 up text-white">
+
+                                 <?php foreach ($categories as  $category) {
+                                   
+                                     echo  $category->name;
+                                   
+                                   } ?>
+                             
+                               </p>
+                           
+                              <h2 class="up text-white"><?php the_title(); ?></h2>
+
+                             </div>
+
+                           </div>
+                   
+                        </div>
+
+                      </a>
+
+                   <?php  endwhile;
+
+                  wp_reset_query();?>
+
+                <?php endif; ?>
+                
+            </div>  
+
+            </div>
 
           </div>
 
@@ -51,6 +120,21 @@ get_header();
 
          <?php if ( have_posts() ) { ?>
 
+          <?php
+              //Becasue we're displaying the first post as featured post
+              global $wp_query;
+              query_posts(
+                  array_merge(
+                      array(
+                      'post_type' => 'post',
+                      'posts_per_page' => 5,
+                      'orderby' => 'date',
+                      'post_status'  => 'publish',
+                      'offset'     => 1 //this shouldn break the pagination, but on functions.php line 215 there is a quick fix..
+                       ),
+                      $wp_query->query
+                  )
+              ); ?>
 
            <div  class="row posts-loop w-100">
 
