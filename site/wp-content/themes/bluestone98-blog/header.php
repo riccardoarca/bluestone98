@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
   <!-- meta tag header includes -->
   <meta name="author" content="Riccardo Arca" />
   <meta name="description" content="<?=get_the_excerpt()?>" /> 
-  <meta name="keywords" content="<?=$metaTags?>">
+  <meta name="keywords" content="Wordpress, test">
   <link rel="canonical" href="<?=wp_get_canonical_url()?>">
   <meta name="robots" content="index, follow">
 
