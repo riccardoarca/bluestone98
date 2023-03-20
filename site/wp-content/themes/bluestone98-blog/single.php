@@ -23,7 +23,7 @@ get_header();
         
 	          <div class="main-header__hero md-container">
 	            
-	         <img class="img-fluid w-100" src="<?php echo $hero_img['url']; ?>" alt="<?php echo $hero_img['alt']; ?>">
+	        	 <img class="img-fluid w-100" src="<?php echo $hero_img['url']; ?>" alt="<?php echo $hero_img['alt']; ?>">
 
 	          </div>
 
